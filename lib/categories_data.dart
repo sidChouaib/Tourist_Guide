@@ -23,7 +23,7 @@ const Categories_data = const [
   ),
   Category(
     id: 'c4',
-    title: 'صحارى',
+    title: 'صحاري',
     imageUrl:
         'https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZGVzZXJ0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60',
   ),
@@ -41,6 +41,8 @@ const Categories_data = const [
   ),
 ];
 
+
+/*
 const Trips_data = const [
   Trip(
     id: 'm1',
@@ -525,3 +527,4 @@ const Trips_data = const [
     isInWinter: true,
   ),
 ];
+*/

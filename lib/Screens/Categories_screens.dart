@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tourist_guide/categories_data.dart';
+import 'package:tourist_guide/Widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   @override
@@ -8,15 +10,19 @@ class CategoriesScreen extends StatelessWidget {
         title: Text('Tourist\'s Guide'),
       ),
       body: GridView(
-        gridDelegate : SliverGridDelegateWithMaxCrossAxisExtent(
+        padding:EdgeInsets.all(10),
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 7 / 8,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-        )
-        children: [
+        ),
 
-        ],
+        children: Categories_data.map((categoryData)
+        => CategoryItem(
+            title: categoryData.title,
+            imageURL: categoryData.imageUrl),
+        ).toList(),
       ),
     );
   }
