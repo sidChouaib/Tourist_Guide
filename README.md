@@ -1,16 +1,7 @@
 # tourist_guide
 
-A new Flutter project.
+A simple prototype app im building while learning basics of flutter, 
 
-## Getting Started
+its goal to help tourists find the most interesting places to visit,
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+while i'm learning how to create an app with multiple screens, navigate through them, pass data between and another.
