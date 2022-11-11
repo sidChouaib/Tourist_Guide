@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tourist_guide/Screens/category_trips_screen.dart';
+import '../Screens/category_trips_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
