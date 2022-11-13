@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
 
 class CategoryTripsScreen extends StatelessWidget {
-  final String categoryId;
-  final String categoryTitle;
-
-  CategoryTripsScreen(
-      this.categoryId,
-      this.categoryTitle, );
+    static const categoryTripsScreenRoute = 'category_trips';
 
   @override
   Widget build(BuildContext context) {
+
+    final routeArgument = ModalRoute
+        .of(context)
+        ?.settings
+        .arguments as Map<String, String>;
+
+    final categoryId = routeArgument['id'];
+    final categoryTitle = routeArgument['title'];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          categoryTitle,
+          categoryTitle!,
         ),
       ),
-      body: Text(
-        'A list of trips'
+      body: 
+      Center(
+        child: Text(
+            'A list of trips'
+        ),
       ),
     );
   }

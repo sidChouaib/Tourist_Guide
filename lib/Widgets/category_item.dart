@@ -9,17 +9,19 @@ class CategoryItem extends StatelessWidget {
    CategoryItem({required this.title, required this.imageURL, required this.id});
 
    void selectCategory (BuildContext ctx) {
-     Navigator.of(ctx).push(
-       MaterialPageRoute(
-         builder: (c) => CategoryTripsScreen(id, title),
-     ),
+     Navigator.of(ctx).pushNamed(
+       CategoryTripsScreen.categoryTripsScreenRoute,
+         arguments: {
+         'id' : id,
+         'title' : title,
+         }
      );
    }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => selectCategory,
+      onTap: () => selectCategory(context),
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(20),
 
