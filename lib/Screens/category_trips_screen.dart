@@ -22,8 +22,11 @@ class CategoryTripsScreen extends StatelessWidget {
       ),
       body: 
       Center(
-        child: Text(
-            'A list of trips'
+        child: ListView.builder(
+          itemBuilder: (ctx, index) {
+            return;
+          },
+          itemCount: ,
         ),
       ),
     );

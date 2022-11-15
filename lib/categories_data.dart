@@ -1,5 +1,5 @@
 import './models/category.dart';
-//import './models/trip.dart';
+import './models/trip.dart';
 
 const Categories_data = const [
   Category(
@@ -41,7 +41,7 @@ const Categories_data = const [
 ];
 
 
-/*
+
 const Trips_data = const [
   Trip(
     id: 'm1',
@@ -526,4 +526,3 @@ const Trips_data = const [
     isInWinter: true,
   ),
 ];
-*/
