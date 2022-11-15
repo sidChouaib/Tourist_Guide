@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../categories_data.dart';
 
 class CategoryTripsScreen extends StatelessWidget {
     static const categoryTripsScreenRoute = 'category_trips';
@@ -13,7 +14,10 @@ class CategoryTripsScreen extends StatelessWidget {
 
     final categoryId = routeArgument['id'];
     final categoryTitle = routeArgument['title'];
-
+    final filterTrips = Trips_data.where((trip) {
+      return trip.categories.contains(categoryId);
+    }).toList();
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -24,9 +28,9 @@ class CategoryTripsScreen extends StatelessWidget {
       Center(
         child: ListView.builder(
           itemBuilder: (ctx, index) {
-            return;
+            return Text(filterTrips[index].title);
           },
-          itemCount: ,
+          itemCount: filterTrips.length,
         ),
       ),
     );

@@ -43,7 +43,7 @@ const Categories_data = const [
 
 
 const Trips_data = const [
-  Trip(
+  const Trip(
     id: 'm1',
     categories: [
       'c1',
