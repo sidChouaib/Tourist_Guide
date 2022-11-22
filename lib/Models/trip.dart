@@ -28,17 +28,17 @@ class Trip {
   final bool isInWinter;
   final bool isForFamilies;
 
-  Trip(
-      @required this.id,
-      @required this.categories,
-      @required this.title,
-      @required this.imageUrl,
-      @required this.activities,
-      @required this.program,
-      @required this.duration,
-      @required this.season,
-      @required this.tripType,
-      @required this.isInSummer,
-      @required this.isInWinter,
-      @required this.isForFamilies);
+  const Trip({
+      required this.id,
+      required this.categories,
+      required this.title,
+      required this.imageUrl,
+      required this.activities,
+      required this.program,
+      required this.duration,
+      required this.season,
+      required this.tripType,
+      required this.isInSummer,
+      required this.isInWinter,
+      required this.isForFamilies});
 }

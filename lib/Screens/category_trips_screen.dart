@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../categories_data.dart';
 
 class CategoryTripsScreen extends StatelessWidget {
-    static const categoryTripsScreenRoute = 'category_trips';
+    static const categoryTripsScreenRoute = '/category_trips';
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +17,14 @@ class CategoryTripsScreen extends StatelessWidget {
     final filterTrips = Trips_data.where((trip) {
       return trip.categories.contains(categoryId);
     }).toList();
-    
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
           categoryTitle!,
         ),
       ),
+
       body: 
       Center(
         child: ListView.builder(

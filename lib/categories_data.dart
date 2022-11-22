@@ -1,5 +1,6 @@
-import './models/category.dart';
-import './models/trip.dart';
+import 'package:flutter/material.dart';
+import './Models/category.dart';
+import './Models/trip.dart';
 
 const Categories_data = const [
   Category(
@@ -42,8 +43,8 @@ const Categories_data = const [
 
 
 
-const Trips_data = const [
-  const Trip(
+const Trips_data = [
+   Trip(
     id: 'm1',
     categories: [
       'c1',
@@ -73,7 +74,9 @@ const Trips_data = const [
     isForFamilies: true,
     isInWinter: true,
   ),
-  Trip(
+
+
+   Trip(
     id: 'm2',
     categories: [
       'c1',
@@ -101,7 +104,8 @@ const Trips_data = const [
     isForFamilies: false,
     isInWinter: false,
   ),
-  Trip(
+
+   Trip(
     id: 'm3',
     categories: [
       'c1',
@@ -129,6 +133,8 @@ const Trips_data = const [
     isForFamilies: false,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm4',
     categories: [
@@ -158,6 +164,8 @@ const Trips_data = const [
     isForFamilies: false,
     isInWinter: false,
   ),
+
+
   Trip(
     id: 'm5',
     categories: [
@@ -187,6 +195,8 @@ const Trips_data = const [
     isForFamilies: false,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm6',
     categories: [
@@ -215,6 +225,8 @@ const Trips_data = const [
     isForFamilies: false,
     isInWinter: false,
   ),
+
+
   Trip(
     id: 'm7',
     categories: [
@@ -243,6 +255,8 @@ const Trips_data = const [
     isForFamilies: false,
     isInWinter: false,
   ),
+
+
   Trip(
     id: 'm8',
     categories: [
@@ -271,6 +285,8 @@ const Trips_data = const [
     isForFamilies: false,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm9',
     categories: [
@@ -299,6 +315,8 @@ const Trips_data = const [
     isForFamilies: false,
     isInWinter: false,
   ),
+
+
   Trip(
     id: 'm10',
     categories: [
@@ -327,6 +345,8 @@ const Trips_data = const [
     isForFamilies: true,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm11',
     categories: [
@@ -356,6 +376,8 @@ const Trips_data = const [
     isForFamilies: true,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm12',
     categories: [
@@ -384,6 +406,8 @@ const Trips_data = const [
     isForFamilies: true,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm13',
     categories: [
@@ -412,6 +436,8 @@ const Trips_data = const [
     isForFamilies: true,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm14',
     categories: [
@@ -440,6 +466,8 @@ const Trips_data = const [
     isForFamilies: true,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm15',
     categories: [
@@ -468,6 +496,8 @@ const Trips_data = const [
     isForFamilies: true,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm16',
     categories: [
@@ -496,6 +526,8 @@ const Trips_data = const [
     isForFamilies: true,
     isInWinter: true,
   ),
+
+
   Trip(
     id: 'm17',
     categories: [
