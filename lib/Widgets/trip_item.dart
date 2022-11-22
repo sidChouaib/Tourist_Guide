@@ -32,7 +32,7 @@ class TripItem extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
@@ -43,6 +43,7 @@ class TripItem extends StatelessWidget {
                       fit: BoxFit.cover,
                   ),
                 ),
+
               ],
             )
           ],

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:tourist_guide/Widgets/trip_item.dart';
 import '../categories_data.dart';
 
 class CategoryTripsScreen extends StatelessWidget {
-    static const categoryTripsScreenRoute = '/category_trips';
+  static const categoryTripsScreenRoute = '/category_trips';
 
   @override
   Widget build(BuildContext context) {
-
     final routeArgument = ModalRoute
         .of(context)
         ?.settings
@@ -14,7 +14,7 @@ class CategoryTripsScreen extends StatelessWidget {
 
     final categoryId = routeArgument['id'];
     final categoryTitle = routeArgument['title'];
-    final filterTrips = Trips_data.where((trip) {
+    final filteredTrips = Trips_data.where((trip) {
       return trip.categories.contains(categoryId);
     }).toList();
 
@@ -25,13 +25,17 @@ class CategoryTripsScreen extends StatelessWidget {
         ),
       ),
 
-      body: 
+      body:
       Center(
         child: ListView.builder(
           itemBuilder: (ctx, index) {
-            return Text(filterTrips[index].title);
+            return TripItem(title: filteredTrips[index].title,
+                imageUrl: filteredTrips[index].imageUrl,
+                tripType: filteredTrips[index].tripType,
+                duration: filteredTrips[index].duration,
+                season: filteredTrips[index].season);
           },
-          itemCount: filterTrips.length,
+          itemCount: filteredTrips.length,
         ),
       ),
     );
