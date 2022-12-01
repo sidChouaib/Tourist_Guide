@@ -15,6 +15,45 @@ class TripItem extends StatelessWidget {
      required this.duration,
      required this.season});
 
+  String get seasonText {
+    switch (season) {
+      case Season.Winter:
+        return 'شتاء';
+        break;
+      case Season.Spring:
+        return 'رييع';
+        break;
+      case Season.Summer:
+        return 'صيف';
+        break;
+      case Season.Autumn:
+        return 'خريف';
+        break;
+      default:
+        return 'unkown season';
+    }
+  }
+
+    String get tripTypeText{
+      switch (tripType) {
+        case TripType.Exploration:
+          return 'Exploration';
+          break;
+        case TripType.Recovery:
+          return 'Recovery';
+          break;
+        case TripType.Activities:
+          return 'Activity';
+          break;
+        case TripType.Therapy:
+          return 'Therapy';
+          break;
+        default:
+          return 'unkown season';
+      }
+    }
+
+
   void selectTrip() {}
 
   @override
@@ -52,6 +91,7 @@ class TripItem extends StatelessWidget {
                     horizontal: 20,
                   ),
 
+                  //We do this to put blackish background shade, so the title would be more readable
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
@@ -77,6 +117,52 @@ class TripItem extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+
+                  Row(
+                    children: [
+                      Icon(Icons.today,
+                        color: Colors.yellow,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text('$duration ايام '),
+                    ],
+                  ),
+
+                  Row(
+                    children: [
+                      Icon(Icons.sunny,
+                        color: Colors.yellow,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(seasonText),
+                    ],
+                  ),
+
+                  Row(
+                    children: [
+                      Icon(Icons.family_restroom,
+                        color: Colors.yellow,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(tripTypeText),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
