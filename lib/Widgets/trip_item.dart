@@ -44,8 +44,40 @@ class TripItem extends StatelessWidget {
                   ),
                 ),
 
+                Container(
+                  height: 250,
+                  alignment: Alignment.bottomRight,
+                  padding: EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 20,
+                  ),
+
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withOpacity(0),
+                        Colors.black.withOpacity(0.8)
+                      ],
+                      stops: [
+                        0.6,
+                        1,
+                      ]
+                    ),
+                  ),
+
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                    ),
+                    overflow: TextOverflow.fade,
+                  ),
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),
