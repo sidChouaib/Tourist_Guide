@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tourist_guide/Screens/category_trips_screen.dart';
-import '../Screens/Categories_screens.dart';
+import '../Screens/categories_screens.dart';
 
 void main() {
   runApp( touristGuide());
