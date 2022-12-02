@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tourist_guide/Widgets/trip_item.dart';
+import '../Widgets/trip_item.dart';
 import '../categories_data.dart';
 
 class CategoryTripsScreen extends StatelessWidget {
@@ -29,7 +29,9 @@ class CategoryTripsScreen extends StatelessWidget {
       Center(
         child: ListView.builder(
           itemBuilder: (ctx, index) {
-            return TripItem(title: filteredTrips[index].title,
+            return TripItem(
+                id: filteredTrips[index].id,
+                title: filteredTrips[index].title,
                 imageUrl: filteredTrips[index].imageUrl,
                 tripType: filteredTrips[index].tripType,
                 duration: filteredTrips[index].duration,

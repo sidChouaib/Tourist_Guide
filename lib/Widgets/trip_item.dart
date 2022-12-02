@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tourist_guide/Models/trip.dart';
+import '../Models/trip.dart';
+import '../Screens/trip_detail_screen.dart';
 
 class TripItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -9,6 +11,7 @@ class TripItem extends StatelessWidget {
   final Season season;
 
   TripItem({
+     required this.id,
      required this.title,
      required this.imageUrl,
      required this.tripType,
@@ -54,12 +57,16 @@ class TripItem extends StatelessWidget {
     }
 
 
-  void selectTrip() {}
+  void selectTrip(BuildContext context) {
+    Navigator.of(context).pushNamed(TripDetailScreen.categoryTripsScreenRoute,
+    arguments: id,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectTrip,
+      onTap: () => selectTrip(context),
 
       child: Card(
 

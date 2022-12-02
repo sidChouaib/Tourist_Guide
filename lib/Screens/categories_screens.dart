@@ -6,11 +6,15 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         title: Text('Tourist\'s Guide'),
       ),
+
+
       body: GridView(
-        padding:EdgeInsets.all(10),
+
+        padding: EdgeInsets.all(10),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 7 / 8,
@@ -18,11 +22,12 @@ class CategoriesScreen extends StatelessWidget {
           crossAxisSpacing: 10,
         ),
 
-        children: Categories_data.map((categoryData)
-        => CategoryItem(
-            id: categoryData.id,
-            title: categoryData.title,
-            imageURL: categoryData.imageUrl),
+
+        children: Categories_data.map(
+          (categoryData) => CategoryItem(
+              id: categoryData.id,
+              title: categoryData.title,
+              imageURL: categoryData.imageUrl),
         ).toList(),
       ),
     );
