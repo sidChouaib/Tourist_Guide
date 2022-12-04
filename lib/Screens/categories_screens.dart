@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tourist_guide/categories_data.dart';
+import 'package:tourist_guide/app_data.dart';
 import 'package:tourist_guide/Widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
