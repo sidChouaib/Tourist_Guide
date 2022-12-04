@@ -122,10 +122,7 @@ class TripItem extends StatelessWidget {
 
                   child: Text(
                     title,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                    ),
+                    style: Theme.of(context).textTheme.headline6,
                     overflow: TextOverflow.fade,
                   ),
                 ),

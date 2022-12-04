@@ -10,11 +10,7 @@ class TripDetailScreen extends StatelessWidget {
       alignment: Alignment.topRight,
       child: Text(
         titleText,
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.blue,
-        ),
+        style: Theme.of(context).textTheme.headline5,
       ),
     );
   }

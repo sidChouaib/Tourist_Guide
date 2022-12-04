@@ -8,7 +8,8 @@ class CategoriesScreen extends StatelessWidget {
     return Scaffold(
 
       appBar: AppBar(
-        title: Text('Tourist\'s Guide'),
+        centerTitle: true,
+        title: Text('دليل سياحي'),
       ),
 
 
