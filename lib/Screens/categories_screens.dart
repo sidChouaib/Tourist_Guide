@@ -5,15 +5,7 @@ import 'package:tourist_guide/Widgets/category_item.dart';
 class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('دليل سياحي'),
-      ),
-
-
-      body: GridView(
+    return GridView(
 
         padding: EdgeInsets.all(10),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -30,7 +22,6 @@ class CategoriesScreen extends StatelessWidget {
               title: categoryData.title,
               imageURL: categoryData.imageUrl),
         ).toList(),
-      ),
     );
   }
 }

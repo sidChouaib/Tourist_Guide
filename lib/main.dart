@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../Screens/category_trips_screen.dart';
-import '../Screens/trip_detail_screen.dart';
-import '../Screens/categories_screens.dart';
+import './Screens/tabs_screen.dart';
+import './Screens/category_trips_screen.dart';
+import './Screens/trip_detail_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
@@ -49,7 +49,7 @@ class touristGuide extends StatelessWidget {
 
       initialRoute: '/',
       routes: {
-        '/' : (ctx) =>CategoriesScreen(),
+        '/' : (ctx) =>TabsScreen(),
         CategoryTripsScreen.categoryTripsScreenRoute: (ctx) => CategoryTripsScreen(),
         TripDetailScreen.categoryTripsScreenRoute: (ctx) => TripDetailScreen(),
       },
