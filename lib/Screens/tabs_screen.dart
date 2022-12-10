@@ -17,9 +17,15 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
   int _selectedScreenIndex = 0;
-  final List<Widget> _screens = [
-    CategoriesScreen(),
-    FavoriteScreen(),
+  final List<Map<String, Widget>> _screens = [
+    {
+      'Screen': CategoriesScreen(),
+      'Title' : Text('تصنيفات الرحلات'),
+    },
+    {
+      'Screen': FavoriteScreen(),
+      'Title' : Text('الرحلات المفضلة'),
+    },
   ];
 
 
@@ -27,11 +33,11 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('دليل سياحي'),
+        title: _screens[_selectedScreenIndex]['Title'],
       ),
 
 
-      body: _screens[_selectedScreenIndex],
+      body: _screens[_selectedScreenIndex]['Screen'],
 
 
       bottomNavigationBar: BottomNavigationBar(
@@ -40,7 +46,6 @@ class _TabsScreenState extends State<TabsScreen> {
         selectedItemColor: Theme.of(context).accentColor,
         unselectedItemColor: Colors.white,
         currentIndex: _selectedScreenIndex,
-
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.dashboard),
