@@ -1,36 +1,56 @@
 import 'package:flutter/material.dart';
-import '../Screens/categories_screens.dart';
-import 'favorites_screen.dart';
+import './categories_screens.dart';
+import './favorites_screen.dart';
 
-class TabsScreen extends StatelessWidget {
+class TabsScreen extends StatefulWidget {
+  const TabsScreen({Key? key}) : super(key: key);
+
+  @override
+  State<TabsScreen> createState() => _TabsScreenState();
+}
+
+class _TabsScreenState extends State<TabsScreen> {
+
+  void _selectScreen(int index) {
+    setState(() {
+      _selectedScreenIndex = index;
+    });
+  }
+  int _selectedScreenIndex = 0;
+  final List<Widget> _screens = [
+    CategoriesScreen(),
+    FavoriteScreen(),
+  ];
 
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('دليل سياحي'),
-          bottom: TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.dashboard),
-                text: 'التصنيفات',
-              ),
-              Tab(
-                icon: Icon(Icons.star),
-                text: 'المفضلة',
-              ),
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('دليل سياحي'),
+      ),
+
+
+      body: _screens[_selectedScreenIndex],
+
+
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _selectScreen,
+        backgroundColor: Theme.of(context).primaryColor,
+        selectedItemColor: Theme.of(context).accentColor,
+        unselectedItemColor: Colors.white,
+        currentIndex: _selectedScreenIndex,
+
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.dashboard),
+              label: 'التصنيفات',
           ),
-        ),
-        body: TabBarView(
-          children: [
-            CategoriesScreen(),
-            FavoriteScreen(),
-          ],
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.star),
+            label: 'المفضلة',
+          ),
+        ],
       ),
     );
   }
