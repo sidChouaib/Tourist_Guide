@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './Screens/filters_screen.dart';
 import './Screens/tabs_screen.dart';
 import './Screens/category_trips_screen.dart';
 import './Screens/trip_detail_screen.dart';
@@ -52,6 +53,7 @@ class touristGuide extends StatelessWidget {
         '/' : (ctx) =>TabsScreen(),
         CategoryTripsScreen.categoryTripsScreenRoute: (ctx) => CategoryTripsScreen(),
         TripDetailScreen.categoryTripsScreenRoute: (ctx) => TripDetailScreen(),
+        FiltersScreen.screenRoute: (ctx) => FiltersScreen(),
       },
     );
   }

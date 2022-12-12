@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Widgets/app_drawer.dart';
 import './categories_screens.dart';
 import './favorites_screen.dart';
 
@@ -16,6 +17,7 @@ class _TabsScreenState extends State<TabsScreen> {
       _selectedScreenIndex = index;
     });
   }
+
   int _selectedScreenIndex = 0;
   final List<Map<String, Widget>> _screens = [
     {
@@ -36,6 +38,8 @@ class _TabsScreenState extends State<TabsScreen> {
         title: _screens[_selectedScreenIndex]['Title'],
       ),
 
+      drawer: AppDrawer(),
+
 
       body: _screens[_selectedScreenIndex]['Screen'],
 
@@ -43,7 +47,7 @@ class _TabsScreenState extends State<TabsScreen> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectScreen,
         backgroundColor: Theme.of(context).primaryColor,
-        selectedItemColor: Theme.of(context).accentColor,
+        selectedItemColor: Theme.of(context).colorScheme.secondary,
         unselectedItemColor: Colors.white,
         currentIndex: _selectedScreenIndex,
         items: [
