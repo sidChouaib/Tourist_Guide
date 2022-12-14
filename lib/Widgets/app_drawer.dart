@@ -39,34 +39,25 @@ class AppDrawer extends StatelessWidget {
                   //that's an anonymous function to go to the menu
                   // the use of this function is causing an error. the error shows on tabs_screen -> drawer : AppDrawer()
                   (){
-                    /*SchedulerBinding.instance.scheduleFrameCallback((timeStamp) {
                       Navigator.of(context).pushReplacementNamed('/');
-                    });*/
-                
                   }),
-
 
 
           //to build second line of drawer menu
           buildListTile(
               Icons.card_travel,
               'الفلترة',
-            // the use of this function is causing an error. the error shows on tabs_screen -> drawer : AppDrawer()
               //that's an anonymous function to go to filter screen screen
                   (){
-                   /*  WidgetsBinding.instance.addPostFrameCallback((timeStamp) { 
                       Navigator.of(context).pushReplacementNamed(FiltersScreen.screenRoute);
-                     });*/
-
               },
             ),
         ],
-
       ),
     );
   }
 
-  Widget buildListTile(IconData icon, String title, Function onTapLink) {
+  Widget buildListTile(IconData icon, String title, VoidCallback onTapLink) {
     return  ListTile(
 
       leading: Icon(
@@ -83,7 +74,7 @@ class AppDrawer extends StatelessWidget {
         ),
       ),
 
-      onTap: onTapLink(),
+      onTap: onTapLink,
     );
   }
 }
