@@ -13,7 +13,7 @@ class FiltersScreen extends StatefulWidget {
 class _FiltersScreenState extends State<FiltersScreen> {
 
   var _isInSummer = false;
-  var isInWinter = false;
+  var _isInWinter = false;
   var _isForFamily = false;
 
   @override
@@ -27,15 +27,41 @@ class _FiltersScreenState extends State<FiltersScreen> {
 
       body: Column(
         children: [
-
+          SizedBox(height: 50,),
           Expanded(
             child: ListView(
               children: [
-                buildSwitchListTile('subject', 'description', _isInSummer,
+
+                buildSwitchListTile(
+                  'الرحلات الصيفية فقط',
+                  'اظهار الرحلات الصيفية فقط',
+                  _isInSummer,
                       ( newValue) {
                        setState(() {
                        _isInSummer = newValue;
                       });
+                  },
+                ),
+
+                buildSwitchListTile(
+                  'الرحلات الشتوية فقط',
+                  'اظهار الرحلات الشتوية فقط',
+                  _isInWinter,
+                      ( newValue) {
+                    setState(() {
+                      _isInWinter = newValue;
+                    });
+                  },
+                ),
+
+                buildSwitchListTile(
+                  'للعائلات',
+                  'اظهار الرحلات الصيفيةالمخصصة للعائلات فقط',
+                  _isForFamily,
+                      ( newValue) {
+                    setState(() {
+                      _isForFamily = newValue;
+                    });
                   },
                 ),
               ],
