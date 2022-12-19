@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './app_data.dart';
 import './Screens/filters_screen.dart';
 import './Screens/tabs_screen.dart';
 import './Screens/category_trips_screen.dart';
@@ -9,7 +10,26 @@ void main() {
   runApp( touristGuide());
 }
 
-class touristGuide extends StatelessWidget {
+class touristGuide extends StatefulWidget {
+
+  @override
+  State<touristGuide> createState() => _touristGuideState();
+}
+
+class _touristGuideState extends State<touristGuide> {
+  Map<String, bool> _filters = {
+    'summer': false,
+    'winter': false,
+    'family':false,
+  };
+
+  void _changeFilters(Map<String, bool> filterData){
+    setState(() {
+      _filters = filterData;
+    });
+  }
+
+ // List<Trip> _availableTrips = Trips_data;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +73,7 @@ class touristGuide extends StatelessWidget {
         '/' : (ctx) =>TabsScreen(),
         CategoryTripsScreen.categoryTripsScreenRoute: (ctx) => CategoryTripsScreen(),
         TripDetailScreen.categoryTripsScreenRoute: (ctx) => TripDetailScreen(),
-        FiltersScreen.screenRoute: (ctx) => FiltersScreen(),
+        FiltersScreen.screenRoute: (ctx) => FiltersScreen(_changeFilters),
       },
     );
   }

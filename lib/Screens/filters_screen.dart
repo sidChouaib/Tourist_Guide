@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import '../Widgets/app_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
-  const FiltersScreen({Key? key}) : super(key: key);
 
   static const screenRoute = '/filters';
+  final VoidCallback saveFilters;
+  FiltersScreen(this.saveFilters);
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
@@ -19,7 +20,14 @@ class _FiltersScreenState extends State<FiltersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('الفلترة'),),
+      appBar: AppBar(
+        title: Text('الفلترة'),
+        actions: [
+          IconButton(icon: Icon(Icons.save),
+          onPressed: widget.saveFilters,
+          ),
+        ],
+      ),
 
 
       drawer: AppDrawer(),
